@@ -1,0 +1,164 @@
+l=[10,20,30,40]
+print(len(l))
+for i in l:
+    print(i)
+l.append(100) 
+l.insert(1,15) 
+l.extend([60,70,80])  
+print(l)
+l.pop()
+print(l)
+l.remove(20)
+print(l)
+l=[11,22,33,44]
+print(22 in l)
+for i in l:
+    print(i,end=" ")
+name="alen"   
+age=25
+print("The name is ",name,"and the age is ",age) 
+
+d={"name":"alen","age":26}
+print(type(d))
+s=set()
+print(type(s))
+l=[10,20,30,40]
+sum=0
+for i in l:
+    sum+=i
+print(sum)    
+
+d={"name":"alen","age":26}
+d['name']='MIT'  
+print(d)
+d.update({'address':'bangalore'})
+print(d)
+del d['age']
+print(d)
+for key in d:
+    print(key)
+for key,value in d.items():
+    print(key,"->",value)    
+
+
+def myfunc():
+    return "This is my function"
+res=myfunc()
+print(res)
+ 
+def myfunc2():
+    print("This is non-return function")
+myfunc2()
+def add(a,b,c):
+    return a+b+c
+print(add(1,2,3))
+
+n=100
+class Student:
+    def __init__(self):
+       self.  n=10
+       self.name="bob"
+    def myfunction(self):
+        n=20
+        print(self.n)
+        print("This is my local function")
+s1=Student()
+print(n)       
+print(s1.myfunction())
+
+
+class StudentDetail:
+    def __init__(self,usn,name,address):
+        self.usn=usn
+        self.name=name
+        self.address=address
+    def my_student_details(self):
+        print("The student name is {} and the name is {} and the address is {}".format(self.usn,self.name,self.address))
+s1=StudentDetail('mit01','alen','bangalore') 
+s1.my_student_details()
+       
+class GParent:
+    def gdisplay(self):
+        print("This is grandparent property!")
+class Parent(GParent):
+    def pdisplay(self):
+        print("This is parent property!")
+class Child(Parent):
+   def cdisplay(self):
+       print("This is child property!")        
+c=Child()   
+c.cdisplay()
+c.pdisplay()    
+c.gdisplay()
+
+class Father:
+    def fdisplay(self):
+        print("Fatherdisplay")
+class Mother:
+   def mdisplay(self):
+      print("Mother dsplay")        
+class Child(Mother,Father):
+   def cdisplay(self):
+       print("Child display")
+c= Child()   
+c.fdisplay()
+c.mdisplay() 
+       
+
+class Child1:
+    def c1display(self):
+        print("Fatherdisplay")
+class Child2:
+   def c2display(self):
+      print("Mother dsplay")        
+class Child3(Mother,Father):
+   def c3display(self):
+       print("Child display")
+c= Child()   
+c.fdisplay()
+c.mdisplay() 
+
+
+--Session 2
+
+class Encap:
+    n=10
+    __n=45
+    def myfunc(self):
+        print(self.__n)
+obj=Encap() 
+print(obj.n) 
+obj.myfunc()     
+
+def add():
+    return 10+20
+add()
+def add(a,b,c):
+    return a+b+c
+add(10,20,30)
+def add(x,y,z=10):
+    return x+y+z
+add(11,22)
+
+
+class Parent:
+    def display(self):
+        print("This is parent display")
+class Child(Parent):
+    def display(self):
+       super().display()
+       print("This is child display")        
+c=Child()   
+c.display()    
+
+from abc import ABC,abstractmethod
+class AbstractClass(ABC):
+     def display(self):
+         pass
+class ConcreteClass(AbstractClass):
+    def display(self):
+       print("This is abstract method definiton")         
+obj=ConcreteClass()
+obj.display()
+    
+
